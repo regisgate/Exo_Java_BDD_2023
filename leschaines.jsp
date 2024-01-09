@@ -18,6 +18,8 @@
 
         <h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>
         <% 
+String valeur1 = request.getParameter("valeur1");
+String valeur2 = request.getParameter("valeur2");
         int compteurE = 0;
         for (int i = 0; i < longueurChaine; i++) {
             if (chaine.charAt(i) == 'e') {
