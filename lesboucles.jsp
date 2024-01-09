@@ -26,14 +26,11 @@
         <% } %>
     <% } %>
 
+<%-- Exercice 2 : Triangle rectangle gauche --%>
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-
-<%-- Récupération de la valeur saisie par l'utilisateur --%>
 <% String valeurTriangle = request.getParameter("valeurTriangle"); %>
-    
-<%-- Vérification de l'existence de la valeur --%>
 <% if (valeurTriangle != null && !valeurTriangle.isEmpty()) { %>
     <% int tailleTriangle = Integer.parseInt(valeurTriangle); %>
     <% for (int i = 1; i <= tailleTriangle; i++) { %>
@@ -44,16 +41,22 @@
     <% } %>
 <% } %>
 
-
-<h2>Exercice 2 : Triangle rectangle gauche</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*</br>**</br>***</br>****</br>*****</p>
-
+<%-- Exercice 3 : Triangle rectangle inversé --%>
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
 <p>*****</br>****</br>***</br>**</br>*</p>
+<% String valeurTriangleInverse = request.getParameter("valeurTriangleInverse"); %>
+<% if (valeurTriangleInverse != null && !valeurTriangleInverse.isEmpty()) { %>
+    <% int tailleTriangleInverse = Integer.parseInt(valeurTriangleInverse); %>
+    <% for (int i = tailleTriangleInverse; i > 0; i--) { %>
+        <% for (int j = 0; j < i; j++) { %>
+            <%= "*" %>
+        <% } %>
+        <br>
+    <% } %>
+<% } %>
+
 
 <h2>Exercice 4 : Triangle rectangle 2</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la droite</p>
