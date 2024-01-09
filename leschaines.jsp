@@ -25,10 +25,12 @@
    }
 %>
 <p>Nombre de 'e' dans votre chaîne : <%= compteurE %></p>
+
 <h2>Exercice 2 : Affichage vertical</h2>
 <% for (int i = 0; i < longueurChaine; i++) { %>
     <p><%= chaine.charAt(i) %></p>
 <% } %>
+
 
 <h2>Exercice 3 : Retour à la ligne</h2>
 <% for (int i = 0; i < longueurChaine; i++) {
@@ -40,17 +42,20 @@
 } %>
 <br>
 
+
 <h2>Exercice 4 : Afficher une lettre sur deux</h2>
 <% for (int i = 0; i < longueurChaine; i+=2) { %>
     <%= chaine.charAt(i) %>
 <% } %>
 <br>
 
+
 <h2>Exercice 5 : La phrase en verlan</h2>
 <% for (int i = longueurChaine - 1; i >= 0; i--) { %>
     <%= chaine.charAt(i) %>
 <% } %>
 <br>
+
 <h2>Exercice 6 : Consonnes et voyelles</h2>
 <% int compteurVoyelles = 0, compteurConsonnes = 0;
    String voyelles = "aeiouAEIOU";
@@ -64,7 +69,7 @@
    }
 %>
 <p>Nombre de voyelles : <%= compteurVoyelles %>, Nombre de consonnes : <%= compteurConsonnes %></p>
-        
+      
     } else if (chaine != null) {
         out.println("<p>Erreur : Veuillez saisir au moins 6 caractères.</p>");
     }
