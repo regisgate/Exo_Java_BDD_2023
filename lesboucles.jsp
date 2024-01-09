@@ -24,7 +24,6 @@
             <% } %>
             <br>
         <% } %>
-    <% } %>
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
@@ -38,7 +37,7 @@
         <% } %>
         <br>
     <% } %>
-<% } %>
+
 
 <%-- Récupération de la valeur saisie par l'utilisateur --%>
 <% String valeurTriangle = request.getParameter("valeurTriangle"); %>
@@ -52,7 +51,6 @@
         <% } %>
         <br>
     <% } %>
-<% } %>
 
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
