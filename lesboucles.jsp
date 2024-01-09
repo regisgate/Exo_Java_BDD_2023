@@ -26,10 +26,24 @@
         <% } %>
     <% } %>
 
-<h2>Exercice 1 : Le carré d'étoiles</h2>
-<p>Ecrire le code afin de produire un carré d'étoile</p>
+<h2>Exercice 2 : Triangle rectangle gauche</h2>
+<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
-<p>*****</br>*****</br>*****</br>*****</br>*****</p>
+
+<%-- Récupération de la valeur saisie par l'utilisateur --%>
+<% String valeurTriangle = request.getParameter("valeurTriangle"); %>
+    
+<%-- Vérification de l'existence de la valeur --%>
+<% if (valeurTriangle != null && !valeurTriangle.isEmpty()) { %>
+    <% int tailleTriangle = Integer.parseInt(valeurTriangle); %>
+    <% for (int i = 1; i <= tailleTriangle; i++) { %>
+        <% for (int j = 1; j <= i; j++) { %>
+            <%= "*" %>
+        <% } %>
+        <br>
+    <% } %>
+<% } %>
+
 
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
