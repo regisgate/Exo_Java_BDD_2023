@@ -64,8 +64,6 @@
    }
 %>
 <p>Nombre de voyelles : <%= compteurVoyelles %>, Nombre de consonnes : <%= compteurConsonnes %></p>
-
-        // Exercice 1 à 6 ici
         
     } else if (chaine != null) {
         out.println("<p>Erreur : Veuillez saisir au moins 6 caractères.</p>");
