@@ -29,6 +29,16 @@
 <h2>Exercice 2 : Triangle rectangle gauche</h2>
 <p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
 <p>Exemple si l'utilisateur saisie le valeur 5</p>
+<% String valeurTriangleInverse = request.getParameter("valeurTriangleInverse"); %>
+<% if (valeurTriangleInverse != null && !valeurTriangleInverse.isEmpty()) { %>
+    <% int tailleTriangleInverse = Integer.parseInt(valeurTriangleInverse); %>
+    <% for (int i = tailleTriangleInverse; i > 0; i--) { %>
+        <% for (int j = 0; j < i; j++) { %>
+            <%= "*" %>
+        <% } %>
+        <br>
+    <% } %>
+<% } %>
 
 <%-- Récupération de la valeur saisie par l'utilisateur --%>
 <% String valeurTriangle = request.getParameter("valeurTriangle"); %>
