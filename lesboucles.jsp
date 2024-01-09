@@ -39,7 +39,7 @@
         <% } %>
         <br>
     <% } %>
-<% } %>
+<% } %
 
 <%-- Exercice 3 : Triangle rectangle inversé --%>
 <h2>Exercice 3 : Triangle rectangle inversé</h2>
