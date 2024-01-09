@@ -14,56 +14,40 @@ User
 
 <%-- Récupération de la valeur saisie par l'utilisateur --%>
 <% String valeur = request.getParameter("valeur"); %>
-    
-    <%-- Vérification de l'existence de la valeur --%>
-    <% if (valeur != null && !valeur.isEmpty()) { %>
-        <% int taille = Integer.parseInt(valeur); %>
-        <h2>Exercice 1 : Le carré d'étoiles</h2>
-        <% for (int i = 0; i < taille; i++) { %>
-            <% for (int j = 0; j < taille; j++) { %>
-                <%= "*" %>
-            <% } %>
-            <br>
+<% if (valeur != null && !valeur.isEmpty()) { %>
+    <% int taille = Integer.parseInt(valeur); %>
+
+    <%-- Exercice 1 : Le carré d'étoiles --%>
+    <h2>Exercice 1 : Le carré d'étoiles</h2>
+    <% for (int i = 0; i < taille; i++) { %>
+        <% for (int j = 0; j < taille; j++) { %>
+            <%= "*" %>
         <% } %>
+        <br>
     <% } %>
 
-<%-- Exercice 2 : Triangle rectangle gauche --%>
-<h2>Exercice 2 : Triangle rectangle gauche</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<% String valeurTriangle = request.getParameter("valeurTriangle"); %>
-<% if (valeurTriangle != null && !valeurTriangle.isEmpty()) { %>
-    <% int tailleTriangle = Integer.parseInt(valeurTriangle); %>
-    <% for (int i = 1; i <= tailleTriangle; i++) { %>
+    <%-- Exercice 2 : Triangle rectangle gauche --%>
+    <h2>Exercice 2 : Triangle rectangle gauche</h2>
+    <% for (int i = 1; i <= taille; i++) { %>
         <% for (int j = 1; j <= i; j++) { %>
             <%= "*" %>
         <% } %>
         <br>
     <% } %>
-<% } %>
 
-<%-- Exercice 3 : Triangle rectangle inversé --%>
-<h2>Exercice 3 : Triangle rectangle inversé</h2>
-<p>Ecrire le code afin de produire un triangle rectangle aligné sur la gauche</p>
-<p>Exemple si l'utilisateur saisie le valeur 5</p>
-<% String valeurTriangleInverse = request.getParameter("valeurTriangleInverse"); %>
-<% if (valeurTriangleInverse != null && !valeurTriangleInverse.isEmpty()) { %>
-    <% int tailleTriangleInverse = Integer.parseInt(valeurTriangleInverse); %>
-    <% for (int i = tailleTriangleInverse; i > 0; i--) { %>
+    <%-- Exercice 3 : Triangle rectangle inversé --%>
+    <h2>Exercice 3 : Triangle rectangle inversé</h2>
+    <% for (int i = taille; i > 0; i--) { %>
         <% for (int j = 0; j < i; j++) { %>
             <%= "*" %>
         <% } %>
         <br>
     <% } %>
-<% } %>
 
-
-
-<%-- Exercice 4: Triangle Rectangle Aligné à Droite --%>
-<% String valeurTriangleDroit = request.getParameter("valeurTriangleDroit"); %>
-<% if (valeurTriangleDroit != null && !valeurTriangleDroit.isEmpty()) { %>
-    <% int tailleTriangleDroit = Integer.parseInt(valeurTriangleDroit); %>
-    <% for (int i = 1; i <= tailleTriangleDroit; i++) { %>
-        <% for (int j = 1; j <= tailleTriangleDroit - i; j++) { %>
+    <%-- Exercice 4 : Triangle rectangle aligné à droite --%>
+    <h2>Exercice 4 : Triangle rectangle 2</h2>
+    <% for (int i = 1; i <= taille; i++) { %>
+        <% for (int j = 1; j <= taille - i; j++) { %>
             <%= "&nbsp;" %>
         <% } %>
         <% for (int k = 1; k <= i; k++) { %>
@@ -71,15 +55,11 @@ User
         <% } %>
         <br>
     <% } %>
-<% } %>
 
-
-<%-- Exercice 5: Triangle Isocèle --%>
-<% String valeurTriangleIsocele = request.getParameter("valeurTriangleIsocele"); %>
-<% if (valeurTriangleIsocele != null && !valeurTriangleIsocele.isEmpty()) { %>
-    <% int tailleTriangleIsocele = Integer.parseInt(valeurTriangleIsocele); %>
-    <% for (int i = 1; i <= tailleTriangleIsocele; i++) { %>
-        <% for (int j = 1; j <= tailleTriangleIsocele - i; j++) { %>
+    <%-- Exercice 5 : Triangle isocèle --%>
+    <h2>Exercice 5 : Triangle isocele</h2>
+    <% for (int i = 1; i <= taille; i++) { %>
+        <% for (int j = 1; j <= taille - i; j++) { %>
             <%= "&nbsp;" %>
         <% } %>
         <% for (int k = 1; k <= (2 * i - 1); k++) { %>
@@ -87,15 +67,11 @@ User
         <% } %>
         <br>
     <% } %>
-<% } %>
 
-
-<%-- Exercice 6: Demi Losange --%>
-<% String valeurDemiLosange = request.getParameter("valeurDemiLosange"); %>
-<% if (valeurDemiLosange != null && !valeurDemiLosange.isEmpty()) { %>
-    <% int tailleDemiLosange = Integer.parseInt(valeurDemiLosange); %>
-    <% for (int i = 1; i <= tailleDemiLosange; i++) { %>
-        <% for (int j = 1; j <= tailleDemiLosange - i; j++) { %>
+    <%-- Exercice 6 : Demi losange --%>
+    <h2>Exercice 6 : Le demi losange</h2>
+    <% for (int i = 1; i <= taille; i++) { %>
+        <% for (int j = 1; j <= taille - i; j++) { %>
             <%= "&nbsp;" %>
         <% } %>
         <% for (int k = 1; k <= i; k++) { %>
@@ -103,8 +79,8 @@ User
         <% } %>
         <br>
     <% } %>
-    <% for (int i = tailleDemiLosange - 1; i > 0; i--) { %>
-        <% for (int j = 1; j <= tailleDemiLosange - i; j++) { %>
+    <% for (int i = taille - 1; i > 0; i--) { %>
+        <% for (int j = 1; j <= taille - i; j++) { %>
             <%= "&nbsp;" %>
         <% } %>
         <% for (int k = 1; k <= i; k++) { %>
@@ -112,17 +88,14 @@ User
         <% } %>
         <br>
     <% } %>
-<% } %>
 
-<h2>Exercice 7 : La table de multiplication</h2>
-<p>Ecrire le code afin de créer une table de multiplication</p>
-<% String valeurMultiplication = request.getParameter("valeurMultiplication"); %>
-<% if (valeurMultiplication != null && !valeurMultiplication.isEmpty()) { %>
-    <% int nombre = Integer.parseInt(valeurMultiplication); %>
+    <%-- Exercice 7 : La table de multiplication --%>
+    <h2>Exercice 7 : La table de multiplication</h2>
     <% for (int i = 1; i <= 10; i++) { %>
-        <p><%= nombre %> x <%= i %> = <%= nombre * i %></p>
+        <p><%= taille %> x <%= i %> = <%= taille * i %></p>
     <% } %>
 <% } %>
+
 
 <p><a href="index.html">Retour au sommaire</a></p>
 </body>
