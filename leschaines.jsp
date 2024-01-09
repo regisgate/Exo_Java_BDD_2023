@@ -1,12 +1,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <html>
 <head>
-    <title>Les chaines</title>
+    <title>Les chaînes</title>
 </head>
 <body bgcolor=white>
     <h1>Exercices sur les chaînes de caractères</h1>
     <form action="#" method="post">
-        <p>Saisir une chaîne (Du texte avec 6 caractères minimum) : <input type="text" id="inputValeur" name="chaine">
+        <p>Saisir une chaîne (Du texte avec 6 caractères minimum) : <input type="text" name="chaine">
+        <p>Saisir la première valeur numérique : <input type="text" name="valeur1"></p>
+        <p>Saisir la deuxième valeur numérique : <input type="text" name="valeur2"></p>
         <input type="submit" value="Afficher">
     </form>
 
@@ -14,8 +16,6 @@
     String chaine = request.getParameter("chaine"); 
     if (chaine != null && chaine.length() >= 6) {
         int longueurChaine = chaine.length();
-    %>
-
         <h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>
         <% 
         int compteurE = 0;
@@ -70,22 +70,25 @@
         }
         %>
         <p>Nombre de voyelles : <%= compteurVoyelles %>, Nombre de consonnes : <%= compteurConsonnes %></p>
-
-    <% 
     } else if (chaine != null) {
         out.println("<p>Erreur : Veuillez saisir au moins 6 caractères.</p>");
     }
-    %>
-String valeur1 = request.getParameter("valeur1");
+
+    String valeur1 = request.getParameter("valeur1");
     String valeur2 = request.getParameter("valeur2");
     try {
         if (valeur1 != null && valeur2 != null && !valeur1.isEmpty() && !valeur2.isEmpty()) {
             int intValeur1 = Integer.parseInt(valeur1);
             int intValeur2 = Integer.parseInt(valeur2);
-            // Votre logique de comparaison
+            // Logique de comparaison
+            // Exemple: out.println("<p>Comparaison: " + (intValeur1 > intValeur2) + "</p>");
         } else {
-            out.println("<p>Veuillez saisir des valeurs numériques valides.</p>");
+            out.println("<p>Veuillez saisir des valeurs numériques valides pour la comparaison.</p>");
         }
+    } catch (NumberFormatException e) {
+        out.println("<p>Erreur : Les valeurs doivent être numériques.</p>");
+    }
+    %>
     <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
