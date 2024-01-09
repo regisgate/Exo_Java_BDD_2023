@@ -17,7 +17,6 @@
     if (chaine != null && chaine.length() >= 6) {
         int longueurChaine = chaine.length();
 
-        // Exercices 1 à 6 ici
         // Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?
         int compteurE = 0;
         for (int i = 0; i < longueurChaine; i++) {
