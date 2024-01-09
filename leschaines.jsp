@@ -78,6 +78,16 @@
         out.println("<p>Erreur : Veuillez saisir au moins 6 caractères.</p>");
     }
     %>
+String valeur1 = request.getParameter("valeur1");
+    String valeur2 = request.getParameter("valeur2");
+    try {
+        if (valeur1 != null && valeur2 != null && !valeur1.isEmpty() && !valeur2.isEmpty()) {
+            int intValeur1 = Integer.parseInt(valeur1);
+            int intValeur2 = Integer.parseInt(valeur2);
+            // Votre logique de comparaison
+        } else {
+            out.println("<p>Veuillez saisir des valeurs numériques valides.</p>");
+        }
     <p><a href="index.html">Retour au sommaire</a></p>
 </body>
 </html>
