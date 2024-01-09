@@ -16,24 +16,25 @@
     String chaine = request.getParameter("chaine"); 
     if (chaine != null && chaine.length() >= 6) {
         int longueurChaine = chaine.length();
-        <h2>Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?</h2>
-        <% 
+
+        // Exercices 1 à 6 ici
+        // Exercice 1 : Combien de 'e' dans notre chaîne de caractères ?
         int compteurE = 0;
         for (int i = 0; i < longueurChaine; i++) {
             if (chaine.charAt(i) == 'e') {
                 compteurE++;
             }
         }
-        %>
-        <p>Nombre de 'e' dans votre chaîne : <%= compteurE %></p>
+        out.println("<p>Nombre de 'e' dans votre chaîne : " + compteurE + "</p>");
 
-        <h2>Exercice 2 : Affichage vertical</h2>
-        <% for (int i = 0; i < longueurChaine; i++) { %>
-            <p><%= chaine.charAt(i) %></p>
-        <% } %>
+        // Exercice 2 : Affichage vertical
+        out.println("<h2>Exercice 2 : Affichage vertical</h2>");
+        for (int i = 0; i < longueurChaine; i++) {
+            out.println("<p>" + chaine.charAt(i) + "</p>");
+        }
 
-        <h2>Exercice 3 : Retour à la ligne</h2>
-        <% 
+        // Exercice 3 : Retour à la ligne
+        out.println("<h2>Exercice 3 : Retour à la ligne</h2>");
         for (int i = 0; i < longueurChaine; i++) {
             if (chaine.charAt(i) == ' ') {
                 out.println("<br>");
@@ -41,23 +42,23 @@
                 out.print(chaine.charAt(i));
             }
         }
-        %>
-        <br>
+        out.println("<br>");
 
-        <h2>Exercice 4 : Afficher une lettre sur deux</h2>
-        <% for (int i = 0; i < longueurChaine; i+=2) { %>
-            <%= chaine.charAt(i) %>
-        <% } %>
-        <br>
+        // Exercice 4 : Afficher une lettre sur deux
+        out.println("<h2>Exercice 4 : Afficher une lettre sur deux</h2>");
+        for (int i = 0; i < longueurChaine; i+=2) {
+            out.print(chaine.charAt(i));
+        }
+        out.println("<br>");
 
-        <h2>Exercice 5 : La phrase en verlan</h2>
-        <% for (int i = longueurChaine - 1; i >= 0; i--) { %>
-            <%= chaine.charAt(i) %>
-        <% } %>
-        <br>
+        // Exercice 5 : La phrase en verlan
+        out.println("<h2>Exercice 5 : La phrase en verlan</h2>");
+        for (int i = longueurChaine - 1; i >= 0; i--) {
+            out.print(chaine.charAt(i));
+        }
+        out.println("<br>");
 
-        <h2>Exercice 6 : Consonnes et voyelles</h2>
-        <% 
+        // Exercice 6 : Consonnes et voyelles
         int compteurVoyelles = 0, compteurConsonnes = 0;
         String voyelles = "aeiouAEIOU";
         for (int i = 0; i < longueurChaine; i++) {
@@ -68,8 +69,7 @@
                 compteurConsonnes++;
             }
         }
-        %>
-        <p>Nombre de voyelles : <%= compteurVoyelles %>, Nombre de consonnes : <%= compteurConsonnes %></p>
+        out.println("<p>Nombre de voyelles : " + compteurVoyelles + ", Nombre de consonnes : " + compteurConsonnes + "</p>");
     } else if (chaine != null) {
         out.println("<p>Erreur : Veuillez saisir au moins 6 caractères.</p>");
     }
@@ -81,7 +81,7 @@
             int intValeur1 = Integer.parseInt(valeur1);
             int intValeur2 = Integer.parseInt(valeur2);
             // Logique de comparaison
-            // Exemple: out.println("<p>Comparaison: " + (intValeur1 > intValeur2) + "</p>");
+            out.println("<p>Comparaison: " + (intValeur1 > intValeur2) + "</p>");
         } else {
             out.println("<p>Veuillez saisir des valeurs numériques valides pour la comparaison.</p>");
         }
